@@ -7,5 +7,6 @@ new Vue({
 })
 
 
-navigator.serviceWorker.register('/service-worker.js',{scope: '/'})
-                                .catch(console.error.bind(console))
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/serviceworker.js',{scope: '/'});
+}
